@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  instruction: MyText
+  feeds: 1
+  image: MyString
+  price: 1.5
+  public_view: false
+
+two:
+  name: MyString
+  instruction: MyText
+  feeds: 1
+  image: MyString
+  price: 1.5
+  public_view: false
