@@ -15,7 +15,7 @@ class IngredientsController < ApplicationController
   def index
     @recipe = Recipe.find(params[:recipe_id])
     @ingredients = @recipe.ingredients
-    # @ingredient = Ingredient.find(params[:id])
+
   end
 
   def create
