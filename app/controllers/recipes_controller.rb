@@ -56,7 +56,6 @@ class RecipesController < ApplicationController
         :instruction,
         :feeds,
         :price,
-        :public_view,
         :image,
         )
     end

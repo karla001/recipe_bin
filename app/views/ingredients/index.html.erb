@@ -3,8 +3,9 @@
 <ul>
     <% @ingredients.each do |ingredient| %>
         <li>
-            <strong> <%= ingredient.name %> </strong>  <%= ingredient.portion %><%= ingredient.p_unit_of_measure %>
+            <strong> <%= ingredient.name %> </strong> <%= ingredient.portion %>  <%= ingredient.p_unit_of_measure %>
         </li>
     <% end %>
 </ul>
-<%=link_to "Add Ingredients", new_user_recipe_ingredient_path(current_user.id, @recipe)  %>
+<button class="btn"><%=link_to "Add Ingredients", new_user_recipe_ingredient_path(current_user.id, @recipe)  %></button>
+<button class="btn"><%=link_to "Back to Recipe", user_recipe_path(current_user.id, @recipe)  %></button>
