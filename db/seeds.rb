@@ -14,7 +14,6 @@ recipe = users[0].recipes.create([
     feeds: 2,
     image: "friendship",
     price: 2.99,
-    public_view: true
   }
 ])
 
