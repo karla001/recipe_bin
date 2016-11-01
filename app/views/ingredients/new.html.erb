@@ -1,1 +1,24 @@
-give me new ingredients
+
+<h1>Ingredient:</h1>
+
+<%= form_for @ingredient, url: user_recipe_ingredients_path, method: :post do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :portion %>
+    <%= f.number_field :portion %>
+  </div>
+  <div class="field">
+    <%= f.label "Unit of measure:" %>
+    <%= f.text_field :p_unit_of_measure %>
+  </div>
+  <div class="field">
+    <%= f.label :brand %>
+    <%= f.text_field :brand %>
+  </div>
+
+  <div class="actions"><%= f.submit %></div>
+<% end %>

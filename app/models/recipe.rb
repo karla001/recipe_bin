@@ -1,7 +1,7 @@
 class Recipe < ActiveRecord::Base
 
   belongs_to :user
-  has_many :ingredients
+  has_many :ingredients, dependent: :destroy
 
   validates :name, presence: true
   validates :feeds, presence: true

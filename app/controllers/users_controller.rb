@@ -29,12 +29,9 @@ class UsersController < ApplicationController
     end
   end
 
-  def index
-
-  end
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user
     @recipes = @user.recipes
   end
 

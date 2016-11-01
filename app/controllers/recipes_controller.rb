@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-
+  before_action :authorize
   def new
     @user = User.find(params[:user_id])
     @recipe = @user.recipes.new
@@ -23,8 +23,10 @@ class RecipesController < ApplicationController
   end
 
   def show
+
     @recipe = Recipe.find(params[:id])
     @user = @recipe.user
+
   end
 
   def edit
@@ -39,6 +41,12 @@ class RecipesController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+    redirect_to user_recipes_path
   end
 
   private
