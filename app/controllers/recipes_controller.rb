@@ -26,6 +26,7 @@ class RecipesController < ApplicationController
 
     @recipe = Recipe.find(params[:id])
     @user = @recipe.user
+    @ingredients = @recipe.ingredients
 
   end
 

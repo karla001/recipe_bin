@@ -15,8 +15,18 @@
 
 
 </ul>
-<%=link_to "View Ingredients", user_recipe_ingredients_path(@user.id, @recipe)  %>
+<h1>Ingredients:</h1>
 
+<ul>
+    <% @ingredients.each do |ingredient| %>
+        <li>
+            <strong> <%= ingredient.name %> </strong> <%= ingredient.portion %>  <%= ingredient.p_unit_of_measure %>
+              <%= link_to "Delete", user_recipe_ingredient_path(current_user.id, @recipe.id, ingredient.id), method: :delete, data: { confirm: "Are you sure ?"} %>
+        </li>
+    <% end %>
+</ul>
+<button class="btn"><%=link_to "Add Ingredients", new_user_recipe_ingredient_path(current_user.id, @recipe)  %></button>
+<button class="btn"><%=link_to "Back to Recipes", user_recipes_path(current_user.id)  %></button>
 
 
 
