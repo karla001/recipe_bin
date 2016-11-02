@@ -1,5 +1,7 @@
 
-
+<div class="text-center">
+  <button><h4><%= link_to "Add a Recipe!", new_user_recipe_path(current_user.id)%></h4></button>
+</div>
 
 <h1 class="text-center">Recipes</h1>
   <% @recipes.each do |recipe| %>
@@ -9,11 +11,8 @@
           </strong>
             <%= link_to "Edit", edit_user_recipe_path(current_user.id, recipe.id) %>
             | <%= link_to "Delete", user_recipe_path(current_user.id, recipe.id), method: :delete, data: { confirm: "Are you sure ?"} %>
-            <div class= "image"><%= image_tag recipe.image.url(:thumb) %></div>
+            </br>
+            <%= image_tag recipe.image.url(:thumb) %>
       </div>
   <% end %>
 
-</br>
-<div class="text-center">
-  <button><h4><%= link_to "Add a Recipe!", new_user_recipe_path(current_user.id)%></h4></button>
-</div>
