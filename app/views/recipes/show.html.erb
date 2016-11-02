@@ -2,9 +2,12 @@
 <ul>
 
     <h2 class="text-center text-capitalize">Get Cooking <%= @recipe.name %>!</h2>
-      <div class="image">
-        <%= @recipe.image %>
-      </div>
+ <!--        <% if @recipe.image %>
+          <div class="text-center">
+        <%= image_tag @recipe.image.url(:medium) %>
+          </div>
+        <%end%>
+ -->
     <h1><small>Instructions:</small></h1>
       <p class="lead text-center"><%= @recipe.instruction %></p>
     <h2><small>Feeds:</small></h2>

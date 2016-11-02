@@ -57,7 +57,7 @@ class RecipesController < ApplicationController
         :instruction,
         :feeds,
         :price,
-        :image,
+        :image
         )
     end
 end

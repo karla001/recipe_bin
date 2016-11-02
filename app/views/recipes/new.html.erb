@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-<%= form_for @recipe, url: user_recipes_path(params[:user_id]), method: :post do |f| %>
+<%= form_for @recipe, html: {miltipart: true}, url: user_recipes_path(params[:user_id]), method: :post do |f| %>
   <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
@@ -25,13 +25,15 @@
     <%= f.text_field :feeds %>
   </div>
   <div class="field">
-    <%= f.label :image %>
-    <%= f.text_field :image %>
-  </div>
-  <div class="field">
     <%= f.label :price %>
     <%= f.number_field :price %>
   </div>
+  <div class="field">
+    <%= f.label "Upload image:" %>
+    <%= f.file_field :image %>
+  </div>
+
 
   <div class="actions"><%= f.submit %></div>
+
 <% end %>
