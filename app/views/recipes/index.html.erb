@@ -9,7 +9,11 @@
             <%= link_to "Edit", edit_user_recipe_path(current_user.id, recipe.id) %>
             | <%= link_to "Delete", user_recipe_path(current_user.id, recipe.id), method: :delete, data: { confirm: "Are you sure ?"} %>
             </br>
-            <%= image_tag recipe.image.url(:thumb) %>
+            <% if recipe.image?  %>
+              <%= image_tag recipe.image.url(:thumb) %>
+            <%else%>
+
+            <%end%>
       </div>
   <% end %>
 
