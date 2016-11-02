@@ -4,6 +4,7 @@
     <% @ingredients.each do |ingredient| %>
         <li>
             <strong> <%= ingredient.name %> </strong> <%= ingredient.portion %>  <%= ingredient.p_unit_of_measure %>
+              <%= link_to "Delete", user_recipe_ingredient_path(current_user.id, @recipe.id, ingredient.id), method: :delete, data: { confirm: "Are you sure ?"} %>
         </li>
     <% end %>
 </ul>

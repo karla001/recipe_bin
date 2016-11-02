@@ -1,7 +1,7 @@
 class IngredientsController < ApplicationController
   before_action :authorize
   def show
-    @ingredient = Ingredient.find(params[:id])
+    @ingredient = Ingredient.find(current_user.id, @recipe.id, :id)
     @recipe = @ingredient.recipe
     @ingredients = @recipe.ingredients.where(id: @ingredient.id)
     @user = @ingredient.recipe.user
@@ -30,8 +30,24 @@ class IngredientsController < ApplicationController
   end
 
   def destroy
+    @recipe = Recipe.find(params[:recipe_id])
     @ingredient = Ingredient.find(params[:id])
     @ingredient.destroy
+    redirect_to user_recipe_ingredients_path(params[:user_id], @recipe.id)
+  end
+
+   def edit
+     @ingredient = Ingredient.find(params[:id])
+  end
+
+  def update
+    @ingredient = Ingredient.find(params[:id])
+    if@ingredient.update_attributes(ingredient_params)
+      redirect_to user_recipe_ingredient_path(current_user, @recipe.id)
+       flash[:notice] = "You have edited your ingredient!"
+    else
+      render 'edit'
+    end
   end
 
   private
