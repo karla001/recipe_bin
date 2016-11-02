@@ -1,6 +1,6 @@
 
-<h1>Hi <%= current_user.name %> !</h1>
-<h3> You currently have <%= current_user.recipes.count %> recipes.</h3>
+<h1 class="text-capitalize">Hi <%= current_user.name %> !</h1>
+<h1><small> You currently have <%= current_user.recipes.count %> recipes.</small></h1>
 
 <button><h4 class="option"><%= link_to "Add a Recipe!", new_user_recipe_path(current_user.id)%></h4></button>
 <button class="user option"><h4><%= link_to "Edit Account", edit_user_path(current_user.id) %></h4></button>

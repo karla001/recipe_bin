@@ -11,13 +11,9 @@
 </head>
 <body>
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand">Recipe-Bin</a>
-    </div>
     <ul class="nav navbar-nav">
-
-      <li class="active"><%= link_to 'Home', root_path %></li>
+      <li class="active"><%= link_to 'Recipe-Bin', root_path %></li>
+      <li class="nav navbar-nav"><%= link_to 'Home', root_path %></li>
       <% if current_user %>
         <li><%= link_to "Recipes", user_recipes_path(current_user.id) %></li>
 

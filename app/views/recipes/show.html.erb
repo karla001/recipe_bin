@@ -1,26 +1,27 @@
-<h1>Recipe</h1>
+<h1>Get Cooking!</h1>
 
 <ul>
 
-
-            <strong> <%= @recipe.name %> </strong>
-
-            <li>Instructions:</li>
-            <p><%= @recipe.instruction %></p>
-            <li>Feeds: <%= @recipe.feeds %></li>
-            <li>Approximate Price: $<%= @recipe.price %> </li>
-            <div class="image">
-              <%= @recipe.image %>
-            </div>
-
+    <h2 class="text-center text-capitalize"><%= @recipe.name %></h2>
+      <div class="image">
+        <%= @recipe.image %>
+      </div>
+    <h1><small>Instructions:</small></h1>
+      <p class="lead text-center"><%= @recipe.instruction %></p>
+    <h2><small>Feeds:</small></h2>
+     <p class="lead text-center"><%= @recipe.feeds %></p>
+    <h2><small>Approximate Price:</small></h2>
+    <p class="lead text-center">$<%= @recipe.price %></p>
 
 </ul>
-<h1>Ingredients:</h1>
+<h1><small>Ingredients:</small></h1>
 
 <ul>
     <% @ingredients.each do |ingredient| %>
         <li>
-            <strong> <%= ingredient.name %> </strong> <%= ingredient.portion %>  <%= ingredient.p_unit_of_measure %>
+            <strong> <%= ingredient.name %> </strong>
+              | <%= ingredient.portion %>
+              <%= ingredient.p_unit_of_measure %>
               <%= link_to "Delete", user_recipe_ingredient_path(current_user.id, @recipe.id, ingredient.id), method: :delete, data: { confirm: "Are you sure ?"} %>
         </li>
     <% end %>

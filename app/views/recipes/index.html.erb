@@ -3,7 +3,7 @@
 <ul>
     <% @recipes.each do |recipe| %>
         <li>
-            <strong><%= link_to recipe.name, user_recipe_path(current_user.id, recipe.id) %>
+            <strong class="text-capitalize"><%= link_to recipe.name, user_recipe_path(current_user.id, recipe.id) %>
             </strong>
               <%= link_to "Edit", edit_user_recipe_path(current_user.id, recipe.id) %>
               <%= link_to "Delete", user_recipe_path(current_user.id, recipe.id), method: :delete, data: { confirm: "Are you sure ?"} %>
