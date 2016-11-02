@@ -12,7 +12,6 @@
     <%end%>
 </br>
 <div class= "text-center">
-  <button><h4 class="option text-center"><%= link_to "Add a Recipe!", new_user_recipe_path(current_user.id)%></h4></button>
   <button class="user option"><h4><%= link_to "Edit Account", edit_user_path(current_user.id) %></h4></button>
   <button class="user option"><h4><%= link_to "Delete Account", user_path(current_user.id), method: :delete, data: { confirm: "Are you sure ?"} %></h4></button>
 </div>
