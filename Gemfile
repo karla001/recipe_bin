@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 ruby '2.2.3'
+
 gem 'paperclip'
+gem 'aws-sdk', '~>2.3'
+
 gem 'rails_12factor'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'bootstrap_form'
@@ -49,3 +52,7 @@ group :development do
   gem 'spring'
 end
 
+group :production do
+  gem 'rails_12factor'
+  gem 'thin'
+end
