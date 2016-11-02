@@ -2,6 +2,16 @@
 <h1>Ingredient:</h1>
 
 <%= form_for @ingredient, url: user_recipe_ingredients_path, method: :post do |f| %>
+  <% if @ingredient.errors.any? %>
+    <div class="error_messages">
+      <h2><small>Oops! Form is invalid</small></h2>
+      <ul>
+        <% for message in @ingredient.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>

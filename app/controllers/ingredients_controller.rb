@@ -22,7 +22,7 @@ class IngredientsController < ApplicationController
     @recipe = Recipe.find(params[:recipe_id])
     @ingredient = @recipe.ingredients.new(ingredient_params)
     if @ingredient.save
-      flash[:notice] = "You have created an ingredient!"
+      flash[:notice] = "You have added an ingredient!"
       redirect_to user_recipe_ingredients_path(params[:user_id], @recipe.id)
     else
       render 'new'
@@ -33,7 +33,7 @@ class IngredientsController < ApplicationController
     @recipe = Recipe.find(params[:recipe_id])
     @ingredient = Ingredient.find(params[:id])
     @ingredient.destroy
-    redirect_to user_recipe_ingredients_path(params[:user_id], @recipe.id)
+    redirect_to user_recipe_path(params[:user_id], @recipe.id)
   end
 
    def edit

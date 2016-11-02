@@ -1,23 +1,23 @@
-<h1>Get Cooking!</h1>
 
 <ul>
 
-    <h2 class="text-center text-capitalize"><%= @recipe.name %></h2>
+    <h2 class="text-center text-capitalize">Get Cooking <%= @recipe.name %>!</h2>
       <div class="image">
         <%= @recipe.image %>
       </div>
     <h1><small>Instructions:</small></h1>
       <p class="lead text-center"><%= @recipe.instruction %></p>
     <h2><small>Feeds:</small></h2>
-     <p class="lead text-center"><%= @recipe.feeds %></p>
+      <p class="lead text-center"><%= @recipe.feeds %></p>
     <h2><small>Approximate Price:</small></h2>
-    <p class="lead text-center">$<%= @recipe.price %></p>
+        <p class="lead text-center">
+          $<%= @recipe.price %>
+        </p>
 
 </ul>
-<h1><small>Ingredients:</small></h1>
-
 <ul>
-    <% @ingredients.each do |ingredient| %>
+    <h1><small>Ingredients:</small></h1>
+      <% @ingredients.each do |ingredient| %>
         <li>
             <strong> <%= ingredient.name %> </strong>
               | <%= ingredient.portion %>
@@ -25,9 +25,12 @@
               <%= link_to "Delete", user_recipe_ingredient_path(current_user.id, @recipe.id, ingredient.id), method: :delete, data: { confirm: "Are you sure ?"} %>
         </li>
     <% end %>
+    </br>
+    <button class="btn"><%=link_to "Add Ingredients", new_user_recipe_ingredient_path(current_user.id, @recipe)  %></button>
 </ul>
-<button class="btn"><%=link_to "Add Ingredients", new_user_recipe_ingredient_path(current_user.id, @recipe)  %></button>
-<button class="btn"><%=link_to "Back to Recipes", user_recipes_path(current_user.id)  %></button>
 
+<div class="text-center">
+  <button class="btn"><%=link_to "Back to Recipes", user_recipes_path(current_user.id)  %></button>
+</div>
 
 

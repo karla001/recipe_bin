@@ -1,8 +1,18 @@
-
-<h1 class="text-capitalize">Hi <%= current_user.name %> !</h1>
-<h1><small> You currently have <%= current_user.recipes.count %> recipes.</small></h1>
-
-<button><h4 class="option"><%= link_to "Add a Recipe!", new_user_recipe_path(current_user.id)%></h4></button>
-<button class="user option"><h4><%= link_to "Edit Account", edit_user_path(current_user.id) %></h4></button>
-<button class="user option"><h4><%= link_to "Delete Account", user_path(current_user.id), method: :delete, data: { confirm: "Are you sure ?"} %></h4></button>
-
+<div class="text-center">
+  <blockquote>
+   <p>“Let food be thy medicine and medicine be thy food.”</p>
+   <footer> Hippocrates</footer>
+  </blockquote>
+</div>
+<h1 class="text-capitalize text-center">Welcome <%= current_user.name %> !</h1>
+  <% if current_user.recipes.count > 1 || current_user.recipes.count == 0 %>
+    <h1 class="text-center"><small> You currently have <%= current_user.recipes.count %> recipes.</small></h1>
+  <%else%>
+    <h1 class="text-center"><small> You currently have <%= current_user.recipes.count %> recipe.</small></h1>
+    <%end%>
+</br>
+<div class= "text-center">
+  <button><h4 class="option text-center"><%= link_to "Add a Recipe!", new_user_recipe_path(current_user.id)%></h4></button>
+  <button class="user option"><h4><%= link_to "Edit Account", edit_user_path(current_user.id) %></h4></button>
+  <button class="user option"><h4><%= link_to "Delete Account", user_path(current_user.id), method: :delete, data: { confirm: "Are you sure ?"} %></h4></button>
+</div>
