@@ -41,29 +41,6 @@ ActiveRecord::Schema.define(version: 20161101202749) do
 
   add_index "recipes", ["user_id"], name: "index_recipes_on_user_id", using: :btree
 
-  create_table "tags", force: :cascade do |t|
-    t.string   "term"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "tags_recipes", force: :cascade do |t|
-    t.integer "tag_id"
-    t.integer "recipe_id"
-  end
-
-  add_index "tags_recipes", ["recipe_id"], name: "index_tags_recipes_on_recipe_id", using: :btree
-  add_index "tags_recipes", ["tag_id"], name: "index_tags_recipes_on_tag_id", using: :btree
-
-  create_table "time_frames", force: :cascade do |t|
-    t.string   "date"
-    t.float    "approx_price"
-    t.text     "description"
-    t.boolean  "public"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -75,6 +52,4 @@ ActiveRecord::Schema.define(version: 20161101202749) do
 
   add_foreign_key "ingredients", "recipes"
   add_foreign_key "recipes", "users"
-  add_foreign_key "tags_recipes", "recipes"
-  add_foreign_key "tags_recipes", "tags"
 end

@@ -36,7 +36,7 @@ class RecipesController < ApplicationController
   def update
     @recipe = Recipe.find(params[:id])
     if @recipe.update_attributes(recipe_params)
-      redirect_to user_recipe_path
+      redirect_to user_recipe_path(current_user, @recipe.id)
        # flash[:notice] = "You have edited a recipe!" not working
     else
       render 'edit'
@@ -46,7 +46,7 @@ class RecipesController < ApplicationController
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
-    redirect_to user_recipes_path
+    redirect_to user_recipes_path(current_user)
   end
 
   private
