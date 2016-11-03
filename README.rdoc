@@ -10,7 +10,7 @@ Stick to what you know and love. Make meal planing a breeze!
 https://i.imgsafe.org/bc59934313.jpg
 
 This project was created in a 1 week time-frame.
-Original planned features were not all implemented/
+Original planned features were not all implemented.
 
 Technologies used:
 
