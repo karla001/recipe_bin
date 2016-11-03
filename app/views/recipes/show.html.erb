@@ -8,7 +8,7 @@
               <%= image_tag @recipe.image.url(:medium) %>
           </div>
         <%end%>
-            <h1><small>Ingredients:</small></h1>
+            <h1 class="col-md-offset-2"><small>Ingredients:</small></h1>
 
     <div class="text-center">
       <% @ingredients.each do |ingredient| %>
@@ -25,15 +25,15 @@
     </div>
 
   <% if @recipe.instruction.length > 0 %>
-    <h1><small>Instructions:</small></h1>
+    <h1 class="col-md-offset-2"><small>Instructions:</small></h1>
       <p class="lead text-center"><%= @recipe.instruction %></p>
   <%end%>
   <% if @recipe.feeds > 0 %>
-    <h2><small>Feeds:</small></h2>
+    <h2 class="col-md-offset-2"><small>Portion Size:</small></h2>
       <p class="lead text-center"><%= @recipe.feeds %></p>
   <%end%>
   <% if @recipe.price %>
-    <h2><small>Approximate Price:</small></h2>
+    <h2 class="col-md-offset-2"><small>Approximate Price:</small></h2>
         <p class="lead text-center">
           $<%= @recipe.price %>
         </p>
