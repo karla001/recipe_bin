@@ -3,28 +3,36 @@
 
     <h2 class="text-center text-capitalize">Get Cooking <%= @recipe.name %>!</h2>
 
+        <% if @recipe.image.url%>
           <div class="text-center">
             <%= image_tag @recipe.image.url(:medium) %>
           </div>
+        <%end%>
 
+  <% if @recipe.instruction.length > 0 %>
     <h1><small>Instructions:</small></h1>
       <p class="lead text-center"><%= @recipe.instruction %></p>
+  <%end%>
+  <% if @recipe.feeds > 0 %>
     <h2><small>Feeds:</small></h2>
       <p class="lead text-center"><%= @recipe.feeds %></p>
+  <%end%>
+  <% if @recipe.price %>
     <h2><small>Approximate Price:</small></h2>
         <p class="lead text-center">
           $<%= @recipe.price %>
         </p>
-
+  <%end%>
 </ul>
 <ul>
     <h1><small>Ingredients:</small></h1>
       <% @ingredients.each do |ingredient| %>
         <li>
-            <strong> <%= ingredient.name %> </strong>
-              | <%= ingredient.portion %>
+
+            <strong class="text-capitalize"> <%= ingredient.name %> </strong>
+              <%= ingredient.portion %>
               <%= ingredient.p_unit_of_measure %>
-              <%= link_to "Delete", user_recipe_ingredient_path(current_user.id, @recipe.id, ingredient.id), method: :delete, data: { confirm: "Are you sure ?"} %>
+             | <%= link_to "Delete", user_recipe_ingredient_path(current_user.id, @recipe.id, ingredient.id), method: :delete, data: { confirm: "Are you sure ?"} %>
         </li>
     <% end %>
     </br>
