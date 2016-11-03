@@ -1,28 +1,25 @@
-== README
+#Recipe-Bin
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+###Technologies used:
 
-Things you may want to cover:
+  *Ruby on Rails:
+     Used to create the application and Embeded Ruby is used for conditionals and data display within the HTML pages.
+  *Bootstrap:
+    Usde to style navbar, forms, and all html pages shown.
+  *HTML:
+    Used to create pages.
+  *AWS image hosting:
+    Used to host user uploaded images.
 
-* Ruby version
+###Unsolved Problems
+  *Time_Frames model was created early on and both model and controller were later deleted however Time_Frame routes are still present.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+###Future-Features
+  *I would like to add a recipe search option.
+  *I would like to add a calendar like feature, where you can assign recipes to dates that you intend to prepare them.
+  *I would like to eventually add a social feature where users can add eacch other as friends.
+  *I would like to add a page where users can post their public recipes and share them with friends.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
+[Trello-board](https://trello.com/b/BiMQazJy/recipe-bin)
