@@ -28,11 +28,11 @@
         </li>
     <% end %>
     </br>
-    <button class="btn"><%=link_to "Add Ingredients", new_user_recipe_ingredient_path(current_user.id, @recipe)  %></button>
+    <button class="btn btn-default"><%=link_to "Add Ingredients", new_user_recipe_ingredient_path(current_user.id, @recipe)  %></button>
 </ul>
 
 <div class="text-center">
-  <button class="btn"><%=link_to "Back to Recipes", user_recipes_path(current_user.id)  %></button>
+  <button class="btn btn-default"><%=link_to "Back to Recipes", user_recipes_path(current_user.id)  %></button>
 </div>
 
 
