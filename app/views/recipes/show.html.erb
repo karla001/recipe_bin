@@ -3,11 +3,26 @@
 
     <h2 class="text-center text-capitalize">Get Cooking <%= @recipe.name %>!</h2>
 
-        <% if @recipe.image.url%>
+        <% if @recipe.image? %>
           <div class="text-center">
-            <%= image_tag @recipe.image.url(:medium) %>
+              <%= image_tag @recipe.image.url(:medium) %>
           </div>
         <%end%>
+            <h1><small>Ingredients:</small></h1>
+
+    <div class="text-center">
+      <% @ingredients.each do |ingredient| %>
+        <p>
+
+            <strong class="text-capitalize"> <%= ingredient.name %> </strong>
+              <%= ingredient.portion %>
+              <%= ingredient.p_unit_of_measure %>
+             | <%= link_to "Delete", user_recipe_ingredient_path(current_user.id, @recipe.id, ingredient.id), method: :delete, data: { confirm: "Are you sure ?"} %>
+        </p>
+      <% end %>
+      </br>
+      <button class="btn btn-default"><%=link_to "Add Ingredients", new_user_recipe_ingredient_path(current_user.id, @recipe)  %></button>
+    </div>
 
   <% if @recipe.instruction.length > 0 %>
     <h1><small>Instructions:</small></h1>
@@ -24,20 +39,8 @@
         </p>
   <%end%>
 </ul>
-<ul>
-    <h1><small>Ingredients:</small></h1>
-      <% @ingredients.each do |ingredient| %>
-        <li>
 
-            <strong class="text-capitalize"> <%= ingredient.name %> </strong>
-              <%= ingredient.portion %>
-              <%= ingredient.p_unit_of_measure %>
-             | <%= link_to "Delete", user_recipe_ingredient_path(current_user.id, @recipe.id, ingredient.id), method: :delete, data: { confirm: "Are you sure ?"} %>
-        </li>
-    <% end %>
-    </br>
-    <button class="btn btn-default"><%=link_to "Add Ingredients", new_user_recipe_ingredient_path(current_user.id, @recipe)  %></button>
-</ul>
+
 
 <div class="text-center">
   <button class="btn btn-default"><%=link_to "Back to Recipes", user_recipes_path(current_user.id)  %></button>
