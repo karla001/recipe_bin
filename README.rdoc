@@ -9,12 +9,17 @@ Stick to what you know and love. Make meal planing a breeze!
 
 https://i.imgsafe.org/bc59934313.jpg
 
+This project was created in a 1 week time-frame.
+Original planned features were not all implemented/
+
 Technologies used:
 
   *Ruby on Rails:
-     Used to create the application and Embeded Ruby is used for conditionals and data display within the HTML pages.
+     Used to create the application and Embeded Ruby is used for conditionals
+     and data display within the HTML pages.
   *Bootstrap:
-    Usde to style navbar, forms, and all html pages shown. Columns were created to modify sizing and offset was used to adjust positioning.
+    Used to style navbar, forms, and all html pages shown.
+    Columns were created to modify sizing and offset was used to adjust positioning.
   *HTML:
     Used to create pages.
   *AWS image hosting:
@@ -22,15 +27,19 @@ Technologies used:
 
 Heroku
     This application is hosted on Heroku.
-    Heroku gave me a couple of issues but after tweeking a couple of routes and double checking my controllers a "rake routes" command made it all better.
+    Heroku gave me a couple of issues but after tweeking a couple of routes
+    and double checking my controllers a "rake routes" command made it all better.
 
 Issues Encountered
   * Generation of more models than needed at begining of projects caused me a lot of pain.
-    The extra models and controllers even when deleted still managed to interfere with my current models and controllers.
-    Most of these issues were solved by scouring through my code to find those small instances where the deleted model/controllers were referenced.
+    The extra models and controllers even when deleted still managed to interfere with my
+    current models and controllers.
+    Most of these issues were solved by scouring through my code to find those small
+    instances where the deleted model/controllers were referenced.
 
 Unsolved Problems
-  *Time_Frames model was created early on and both model and controller were later deleted however Time_Frame routes are still present.
+  *Time_Frames model was created early on and both model and controller
+  were later deleted however Time_Frame routes are still present.
 
 Models
   There are only 3 models used in this application.
@@ -53,29 +62,42 @@ Tables/Relationships
 Dry-Forms
   I really wanted to make my forms as dry as possible.
   I used a _form file which I yielded for my User's Edit and New pages.
-  I tried also using a _form file for Edit and New Recipes, but I encountered some issues.
-  These issues were due to the methods that needed to be used for the each form.
+  I tried also using a _form file for Edit and New Recipes,
+  but I encountered some issues.
+  These issues were due to the methods that needed to be used
+  for the each form.
   After breaking my code trying to yield the form,
   I opted for separate forms to ensure proper function.
 
 Styling
   When I started the application I had a design with more color in mind,
   involving bright green and orange.
-  However, as I started using bootstrap I really enjoyed the minimalistic layout and decided to go that route.
-  I ended up deciding on the colors black and white, these colors are easier on the eyes and just seem easier on the user.
+  However, as I started using bootstrap I really enjoyed the
+  minimalistic layout
+  and decided to go that route.
+  I ended up deciding on the colors black and white,
+  these colors are easier on
+  the eyes and just seem easier on the user.
   I was hoping for my styling to be simple and universal.
 
 Future-Features
   *I would like to add a recipe search option.
-  *I would like to add a calendar like feature, where you can assign recipes to dates that you intend to prepare them.
-  *I would like to eventually add a social feature where users can add eacch other as friends.
-  *I would like to add a page where users can post their public recipes and share them with friends.
+  *I would like to add a calendar like feature,
+  where you can assign recipes
+  to dates that you intend to prepare them.
+  *I would like to eventually add a social feature where users
+  can add each other as friends.
+  *I would like to add a page where users can post their public recipes
+  and share them with friends.
 
 
 Instructions
   *To sign up: Click the sign up link, fill out the form, and submit the form.
   *To log in: Click the log in link, fill out the form, and submit the form.
-  *To delete acount: Once logged in go to your user home link, click "Delete account" button, you will be prompted "are you sure?", click "Ok".
-  *To add Recipes: Click the "Add Recipes" link on the navbar, fill out the form, and submit the form, you will be sent to ingredients form, fill out form and submit as well.
+  *To delete acount: Once logged in go to your user home link,
+  click "Delete account" button, you will be prompted "are you sure?", click "Ok".
+  *To add Recipes: Click the "Add Recipes" link on the navbar,
+  fill out the form, and submit the form, you will be sent to ingredients form,
+  fill out form and submit as well.
 
 Trello-board https://trello.com/b/BiMQazJy/recipe-bin
