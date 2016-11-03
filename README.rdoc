@@ -50,6 +50,21 @@ Tables/Relationships
   User has many recipes
   Recipe has many ingredients
 
+Dry-Forms
+  I really wanted to make my forms as dry as possible.
+  I used a _form file which I yielded for my User's Edit and New pages.
+  I tried also using a _form file for Edit and New Recipes, but I encountered some issues.
+  These issues were due to the methods that needed to be used for the each form.
+  After breaking my code trying to yield the form,
+  I opted for separate forms to ensure proper function.
+
+Styling
+  When I started the application I had a design with more color in mind,
+  involving bright green and orange.
+  However, as I started using bootstrap I really enjoyed the minimalistic layout and decided to go that route.
+  I ended up deciding on the colors black and white, these colors are easier on the eyes and just seem easier on the user.
+  I was hoping for my styling to be simple and universal.
+
 Future-Features
   *I would like to add a recipe search option.
   *I would like to add a calendar like feature, where you can assign recipes to dates that you intend to prepare them.
